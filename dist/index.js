@@ -2423,7 +2423,7 @@ class ESLint {
 		const fixArg = fix ? "--fix" : "";
 		const commandPrefix = prefix || getNpmBinCommand(dir);
 		return run(
-			`${commandPrefix} eslint --ext ${extensionsArg} ${fixArg} --no-color --format json ${args} "."`,
+			`${commandPrefix} eslint --ext ${extensionsArg} ${fixArg} --no-color --format json ${args}`,
 			{
 				dir,
 				ignoreErrors: true,
@@ -3178,7 +3178,7 @@ class Prettier {
 			extensions.length === 1 ? `**/*.${extensions[0]}` : `**/*.{${extensions.join(",")}}`;
 		const fixArg = fix ? "--write" : "--list-different";
 		const commandPrefix = prefix || getNpmBinCommand(dir);
-		return run(`${commandPrefix} prettier ${fixArg} --no-color ${args} "${files}"`, {
+		return run(`${commandPrefix} prettier ${fixArg} --no-color ${args}`, {
 			dir,
 			ignoreErrors: true,
 		});
